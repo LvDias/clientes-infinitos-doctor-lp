@@ -12,16 +12,16 @@ export default function BeforeAfter({ title, left, right } : IBeforeAfter){
     '>
 
       <H3 
-        text={title}
-        color='#7F8084'
-        side='center'
-        bold={700}
-      />
+        $color='#7F8084'
+        $align='center'
+        $bold={700}
+      >{title}</H3>
 
       <div className='
         flex
         gap-20
         items-center
+        md:flex-col
       '>
 
         <div className='
@@ -31,17 +31,15 @@ export default function BeforeAfter({ title, left, right } : IBeforeAfter){
         '>
 
           <H4 
-            text={right.title}
-            color='#7F8084'
-            side='right'
-            bold={600}
-          />
+            $color='#7F8084'
+            $align='right'
+            $bold={600}
+          >{right.title}</H4>
 
           <P 
-            text={right.desc}
-            color='#7F8084'
-            side='right'
-          />
+            $color='#7F8084'
+            $align='right'
+          >{right.desc}</P>
 
         </div>
 
@@ -52,17 +50,15 @@ export default function BeforeAfter({ title, left, right } : IBeforeAfter){
         '>
 
           <H4 
-            text={left.title}
-            color='#7F8084'
-            side='left'
-            bold={600}
-          />
+            $color='#7F8084'
+            $align='left'
+            $bold={600}
+          >{left.title}</H4>
 
           <P 
-            text={left.desc}
-            color='#7F8084'
-            side='left'
-          />
+            $color='#7F8084'
+            $align='left'
+          >{left.desc}</P>
 
         </div>
 

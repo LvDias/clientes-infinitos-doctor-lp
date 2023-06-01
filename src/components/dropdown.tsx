@@ -62,11 +62,10 @@ export default function DropDownFaq({ list } : IDropDownFaq){
                 '>
 
                   <H5 
-                    text={question}
-                    color='#7F8084'
-                    bold={600}
-                    side='left'
-                  />
+                    $color='#7F8084'
+                    $bold={600}
+                    $align='left'
+                  >{question}</H5>
 
                   <Image 
                     className='
@@ -110,18 +109,16 @@ export default function DropDownFaq({ list } : IDropDownFaq){
               `}>
 
                 <P 
-                  text={title}
-                  color='#262625'
-                  uppercase
-                  bold={700}
-                  side='left'
-                />
+                  $color='#262625'
+                  $uppercase
+                  $bold={700}
+                  $align='left'
+                >{title}</P>
 
                 <P 
-                  text={desc}
-                  color='#7F8084'
-                  side='left'
-                />
+                  $color='#7F8084'
+                  $align='left'
+                >{desc}</P>
 
               </div>
               

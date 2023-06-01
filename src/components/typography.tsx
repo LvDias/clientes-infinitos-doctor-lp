@@ -1,232 +1,113 @@
-import IText from './@types/typography'
+import styled from 'styled-components'
 
-export function H1({ text, color, side, bold, uppercase, shadow } : IText){
+export const H1 = styled.h1<{$color ?: string, $align ?: string, $bold ?: number, $uppercase ?: boolean, $shadow ?: boolean}>`
+  font-family: 'Montserrat';
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  color: ${props => props.$color};
+  text-align: ${props => props.$align ? props.$align : 'left'};
+  font-weight: ${props => props.$bold ? props.$bold : '500'};
+  text-transform: ${props => props.$uppercase ? 'uppercase' : 'none'};
+  text-shadow: ${props => props.$shadow ? '1px 1px 0px #0000004D' : 'none'};
 
-  return <h1 style={{ 
-    color: color
-  }} className={`
-    text-4xl
-  ${(() => {
-    switch(side){
-    case 'center':
-      return 'text-center'
-    case 'right':
-      return 'text-right'
-    case 'left':
-      return 'text-left'
-    }
-  })()}
-  ${(() => {
-    switch(bold){
-    case 500:
-      return 'font-medium'
-    case 600:
-      return 'font-semibold'
-    case 700:
-      return 'font-bold'
-    }
-  })()}
-    ${uppercase ? 'uppercase' : 'normal-case'}
-    ${shadow ? 'drop-shadow-[1px_1px_0_#0000004D]' : 'drop-shadow-none'}
-    font-montserrat
-  `} dangerouslySetInnerHTML={{__html: text}} />
+   @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 
-}
+`
 
-export function H2({ text, color, side, bold, uppercase, shadow } : IText){
+export const H2 = styled.h2<{$color ?: string, $align ?: string, $bold ?: number, $uppercase ?: boolean, $shadow ?: boolean}>`
+  font-family: 'Montserrat';
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  color: ${props => props.$color};
+  text-align: ${props => props.$align ? props.$align : 'left'};
+  font-weight: ${props => props.$bold ? props.$bold : '500'};
+  text-transform: ${props => props.$uppercase ? 'uppercase' : 'none'};
+  text-shadow: ${props => props.$shadow ? '1px 1px 0px #0000004D' : 'none'};
 
-  return <h2 style={{ 
-    color: color
-  }} className={`
-    text-3xl
-    ${(() => {
-    switch(side){
-    case 'center':
-      return 'text-center'
-    case 'right':
-      return 'text-right'
-    case 'left':
-      return 'text-left'
-    }
-  })()}
-    ${(() => {
-    switch(bold){
-    case 600:
-      return 'font-semibold'
-    case 700:
-      return 'font-bold'
-    default:
-      return 'font-medium'
-    }
-  })()}
-    ${uppercase ? 'uppercase' : 'normal-case'}
-    ${shadow ? 'drop-shadow-[1px_1px_0_#0000004D]' : 'drop-shadow-none'}
-    font-montserrat
-  `} dangerouslySetInnerHTML={{__html: text}} />
+   @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 
-}
+`
 
-export function H3({ text, color, side, bold, uppercase, shadow } : IText){
+export const H3 = styled.h3<{$color ?: string, $align ?: string, $bold ?: number, $uppercase ?: boolean, $shadow ?: boolean}>`
+  font-family: 'Montserrat';
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: ${props => props.$color};
+  text-align: ${props => props.$align ? props.$align : 'left'};
+  font-weight: ${props => props.$bold ? props.$bold : '500'};
+  text-transform: ${props => props.$uppercase ? 'uppercase' : 'none'};
+  text-shadow: ${props => props.$shadow ? '1px 1px 0px #0000004D' : 'none'};
 
-  return <h3 style={{ 
-    color: color
-  }} className={`
-    text-2xl
-    ${(() => {
-    switch(side){
-    case 'center':
-      return 'text-center'
-    case 'right':
-      return 'text-right'
-    case 'left':
-      return 'text-left'
-    }
-  })()}
-    ${(() => {
-    switch(bold){
-    case 600:
-      return 'font-semibold'
-    case 700:
-      return 'font-bold'
-    default:
-      return 'font-medium'
-    }
-  })()}
-    ${uppercase ? 'uppercase' : 'normal-case'}
-    ${shadow ? 'drop-shadow-[1px_1px_0_#0000004D]' : 'drop-shadow-none'}
-    font-montserrat
-  `} dangerouslySetInnerHTML={{__html: text}} />
+   @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 
-}
+`
 
-export function H4({ text, color, side, bold, uppercase, shadow } : IText){
+export const H4 = styled.h4<{$color ?: string, $align ?: string, $bold ?: number, $uppercase ?: boolean, $shadow ?: boolean}>`
+  font-family: 'Montserrat';
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: ${props => props.$color};
+  text-align: ${props => props.$align ? props.$align : 'left'};
+  font-weight: ${props => props.$bold ? props.$bold : '500'};
+  text-transform: ${props => props.$uppercase ? 'uppercase' : 'none'};
+  text-shadow: ${props => props.$shadow ? '1px 1px 0px #0000004D' : 'none'};
 
-  return <h4 style={{ 
-    color: color
-  }} className={`
-    text-xl
-    ${(() => {
-    switch(side){
-    case 'center':
-      return 'text-center'
-    case 'right':
-      return 'text-right'
-    case 'left':
-      return 'text-left'
-    }
-  })()}
-    ${(() => {
-    switch(bold){
-    case 600:
-      return 'font-semibold'
-    case 700:
-      return 'font-bold'
-    default:
-      return 'font-medium'
-    }
-  })()}
-    ${uppercase ? 'uppercase' : 'normal-case'}
-    ${shadow ? 'drop-shadow-[1px_1px_0_#0000004D]' : 'drop-shadow-none'}
-    font-montserrat
-  `} dangerouslySetInnerHTML={{__html: text}} />
+   @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 
-}
+`
 
-export function H5({ text, color, side, bold, uppercase, shadow } : IText){
+export const H5 = styled.h5<{$color ?: string, $align ?: string, $bold ?: number, $uppercase ?: boolean, $shadow ?: boolean}>`
+  font-family: 'Montserrat';
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: ${props => props.$color};
+  text-align: ${props => props.$align ? props.$align : 'left'};
+  font-weight: ${props => props.$bold ? props.$bold : '500'};
+  text-transform: ${props => props.$uppercase ? 'uppercase' : 'none'};
+  text-shadow: ${props => props.$shadow ? '1px 1px 0px #0000004D' : 'none'};
 
-  return <h5 style={{ 
-    color: color
-  }} className={`
-    text-lg
-    ${(() => {
-    switch(side){
-    case 'center':
-      return 'text-center'
-    case 'right':
-      return 'text-right'
-    case 'left':
-      return 'text-left'
-    }
-  })()}
-    ${(() => {
-    switch(bold){
-    case 600:
-      return 'font-semibold'
-    case 700:
-      return 'font-bold'
-    default:
-      return 'font-medium'
-    }
-  })()}
-    ${uppercase ? 'uppercase' : 'normal-case'}
-    ${shadow ? 'drop-shadow-[1px_1px_0_#0000004D]' : 'drop-shadow-none'}
-    font-montserrat
-  `} dangerouslySetInnerHTML={{__html: text}} />
+   @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 
-}
+`
 
-export function H6({ text, color, side, bold, uppercase, shadow } : IText){
+export const H6 = styled.h6<{$color ?: string, $align ?: string, $bold ?: number, $uppercase ?: boolean, $shadow ?: boolean}>`
+  font-family: 'Montserrat';
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: ${props => props.$color};
+  text-align: ${props => props.$align ? props.$align : 'left'};
+  font-weight: ${props => props.$bold ? props.$bold : '500'};
+  text-transform: ${props => props.$uppercase ? 'uppercase' : 'none'};
+  text-shadow: ${props => props.$shadow ? '1px 1px 0px #0000004D' : 'none'};
 
-  return <h6 style={{ 
-    color: color
-  }} className={`
-    text-xs
-    ${(() => {
-    switch(side){
-    case 'center':
-      return 'text-center'
-    case 'right':
-      return 'text-right'
-    case 'left':
-      return 'text-left'
-    }
-  })()}
-    ${(() => {
-    switch(bold){
-    case 600:
-      return 'font-semibold'
-    case 700:
-      return 'font-bold'
-    default:
-      return 'font-medium'
-    }
-  })()}
-    ${uppercase ? 'uppercase' : 'normal-case'}
-    ${shadow ? 'drop-shadow-[1px_1px_0_#0000004D]' : 'drop-shadow-none'}
-    font-montserrat
-  `} dangerouslySetInnerHTML={{__html: text}} />
+   @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 
-}
+`
 
-export function P({ text, color, side, bold, uppercase, shadow } : IText){
+export const P = styled.p<{$color ?: string, $align ?: string, $bold ?: number, $uppercase ?: boolean, $shadow ?: boolean}>`
+  font-family: 'Montserrat';
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: ${props => props.$color};
+  text-align: ${props => props.$align ? props.$align : 'left'};
+  font-weight: ${props => props.$bold ? props.$bold : '500'};
+  text-transform: ${props => props.$uppercase ? 'uppercase' : 'none'};
+  text-shadow: ${props => props.$shadow ? '1px 1px 0px #0000004D' : 'none'};
 
-  return <p style={{ 
-    color: color
-  }} className={`
-    text-base
-    ${(() => {
-    switch(side){
-    case 'center':
-      return 'text-center'
-    case 'right':
-      return 'text-right'
-    case 'left':
-      return 'text-left'
-    }
-  })()}
-    ${(() => {
-    switch(bold){
-    case 600:
-      return 'font-semibold'
-    case 700:
-      return 'font-bold'
-    default:
-      return 'font-medium'
-    }
-  })()}
-    ${uppercase ? 'uppercase' : 'normal-case'}
-    ${shadow ? 'drop-shadow-[1px_1px_0_#0000004D]' : 'drop-shadow-none'}
-    font-montserrat
-  `} dangerouslySetInnerHTML={{__html: text}} />
+   @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 
-}
+`

@@ -1,5 +1,4 @@
 export default interface ISquare {
-  columns : number
   type : string
   content : {
     image ?: string

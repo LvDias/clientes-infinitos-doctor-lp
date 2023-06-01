@@ -18,13 +18,14 @@ export function ButtonLink({ text, href, shadow } : IButton){
       min-w-[400px]
       rounded-full
       ${shadow ? 'shadow-[0_2px_0_#005AA7]' : 'shadow-none'}
+      md:px-6
+      md:min-w-[auto]
     `} href={href}>
 
       <P 
-        text={ text }
-        side='center'
-        shadow
-      />
+        $align='center'
+        $shadow
+      >{text}</P>
 
     </Link>
     

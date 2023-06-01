@@ -1,7 +1,9 @@
+'use client'
+
 import BeforeAfter from '@/components/beforeAfter'
 import { ButtonLink } from '@/components/button'
 
-import { Container, BContainer, MContainer, SContainer } from '@/components/containers'
+import { Container, BContainer, MContainer, SContainer, ContainerGradient } from '@/components/containers'
 
 import DropDownFaq from '@/components/dropdown'
 
@@ -36,6 +38,7 @@ export default function Home() {
             grid
             grid-cols-2
             gap-5
+            md:grid-cols-1
           '>
 
             <div className='
@@ -44,20 +47,24 @@ export default function Home() {
               justify-between
               items-start
               gap-6
+              md:order-2
+              md:items-center
             '>
 
               <H1 
-                text='BOTOX Week: <br /> A Técnica do Ponto Motor'
-                color='#7F8084'
-                bold={700}
-                side='left'
-              />
+                $color='#7F8084'
+                $bold={700}
+                $align='left'
+              >
+                BOTOX Week: <br /> A Técnica do Ponto Motor
+              </H1>
 
-              <P 
-                text='Aumentamos o potencial de ação da neurotoxina no organismo com menos produto e menos pontuações — e sem precisar cravar agulhas nos músculos da face, o que proporciona ainda mais conforto e segurança nos tratamentos!'
-                color='#7F8084'
-                side='left'
-              />
+              <P
+                $color='#7F8084'
+                $align='left'
+              >
+                Aumentamos o potencial de ação da neurotoxina no organismo com menos produto e menos pontuações — e sem precisar cravar agulhas nos músculos da face, o que proporciona ainda mais conforto e segurança nos tratamentos!
+              </P>
 
               <ButtonLink 
                 text='Xô rugas. Quero ficar mais jovem!'
@@ -74,12 +81,12 @@ export default function Home() {
               aspect-video
               shadow-2xl
               shadow-[#00000071]
+              md:order-1
             ' />
 
           </div>
 
           <Square 
-            columns={3}
             type='SquareImage'
             content={[
               {
@@ -115,16 +122,18 @@ export default function Home() {
             ' />
 
             <H3 
-              text='Dra. Vanessa Pieri'
-              color='white'
-              side='center'
-            />
+              $color='white'
+              $align='center'
+            >
+              Dra. Vanessa Pieri
+            </H3>
 
             <P 
-              text='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam'
-              color='white'
-              side='center'
-            />
+              $color='white'
+              $align='center'
+            >
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+            </P>
 
           </SContainer>
 
@@ -144,17 +153,19 @@ export default function Home() {
         '>
 
           <H2 
-            text='Nós aplicamos o BOTOX no ponto motor e paralisamos <span class="text-white">para sempre</span> todas as fibras musculares causadoras de rugas!'
-            color='#7F8084'
-            bold={700}
-            side='center'
-          />
+            $color='#7F8084'
+            $bold={700}
+            $align='center'
+          >
+            Nós aplicamos o BOTOX no ponto motor e paralisamos <span className='text-white'>para sempre</span> todas as fibras musculares causadoras de rugas!
+          </H2>
 
           <H5 
-            text='Agende uma avaliação:'
-            color='#7F8084'
-            side='center'
-          />
+            $color='#7F8084'
+            $align='center'
+          >
+            Agende uma avaliação:
+          </H5>
 
           <ButtonLink 
             text='Quero agendar um horário'
@@ -176,6 +187,7 @@ export default function Home() {
           flex
           justify-center
           gap-20
+          md:flex-col
         '>
 
           <div className='
@@ -194,28 +206,32 @@ export default function Home() {
           '>
 
             <H3 
-              text='Por que a toxina aplicada sobre o nervo apresenta resultados melhores?'
-              color='#7F8084'
-              side='left'
-            />
+              $color='#7F8084'
+              $align='left'
+            >
+              Por que a toxina aplicada sobre o nervo apresenta resultados melhores?
+            </H3>
 
             <P 
-              text='Porque a neurotoxina é uma substância que tem tropismo por tecido nervoso e não age no músculo como a maioria das pessoas acreditam.'
-              color='#7F8084'
-              side='left'
-            />
+              $color='#7F8084'
+              $align='left'
+            >
+              Porque a neurotoxina é uma substância que tem tropismo por tecido nervoso e não age no músculo como a maioria das pessoas acreditam.
+            </P>
 
             <P 
-              text='Ela age no nervo cortando a comunicação química que acontece no bulbo sináptico, ocasionando a paralisia das fibras musculares permanentemente e de forma muito mais segura, sem contato com sangue, sem entrar na sua corrente sanguínea.'
-              color='#7F8084'
-              side='left'
-            />
+              $color='#7F8084'
+              $align='left'
+            >
+              Ela age no nervo cortando a comunicação química que acontece no bulbo sináptico, ocasionando a paralisia das fibras musculares permanentemente e de forma muito mais segura, sem contato com sangue, sem entrar na sua corrente sanguínea.
+            </P>
 
             <P 
-              text='Muitas pessoas ainda aplicam BOTOX no músculo, porque ainda não sabem que existe uma tecnologia capaz de localizar o ponto motor e ajuda a acertar o nervo com máxima precisão, antes dele se ramificar e entrar nas fibras musculares.'
-              color='#7F8084'
-              side='left'
-            />
+              $color='#7F8084'
+              $align='left'
+            >
+              Muitas pessoas ainda aplicam BOTOX no músculo, porque ainda não sabem que existe uma tecnologia capaz de localizar o ponto motor e ajuda a acertar o nervo com máxima precisão, antes dele se ramificar e entrar nas fibras musculares.
+            </P>
 
           </div>
 
@@ -238,17 +254,19 @@ export default function Home() {
           '>
 
             <H2 
-              text='Nós unimos ciência e tecnologia para inovar nos tratamentos'
-              color='#7F8084'
-              side='center'
-              bold={700}
-            />
+              $color='#7F8084'
+              $align='center'
+              $bold={700}
+            >
+              Nós unimos ciência e tecnologia para inovar nos tratamentos
+            </H2>
 
             <H5 
-              text='Vamos livrar você dos riscos de intoxicação por excesso de pontuações e produto, injetando até 40% menos substância no local certo onde a neurotoxina deve agir!'
-              color='#7F8084'
-              side='center'
-            />
+              $color='#7F8084'
+              $align='center'
+            >
+              Vamos livrar você dos riscos de intoxicação por excesso de pontuações e produto, injetando até 40% menos substância no local certo onde a neurotoxina deve agir!
+            </H5>
 
           </div>
 
@@ -259,17 +277,19 @@ export default function Home() {
           '>
 
             <H3 
-              text='Sem nenhum desperdício'
-              color='#7F8084'
-              side='center'
-              bold={600}
-            />
+              $color='#7F8084'
+              $align='center'
+              $bold={600}
+            >
+              Sem nenhum desperdício
+            </H3>
 
             <P 
-              text='Na Técnica do Ponto Motor, a toxina não entra em contato com o sangue, não se desnatura, e principalmente, não é expelida do seu organismo como é no protocolo padrão. Dessa forma, a substância aumenta o seu potencial de ação paralisando suavemente os microfilamentos musculares que causam as linhas de expressão facial.'
-              color='#7F8084'
-              side='center'
-            />
+              $color='#7F8084'
+              $align='center'
+            >
+              Na Técnica do Ponto Motor, a toxina não entra em contato com o sangue, não se desnatura, e principalmente, não é expelida do seu organismo como é no protocolo padrão. Dessa forma, a substância aumenta o seu potencial de ação paralisando suavemente os microfilamentos musculares que causam as linhas de expressão facial.
+            </P>
 
           </div>
 
@@ -280,35 +300,40 @@ export default function Home() {
           '>
 
             <H3 
-              text='Sem risco de efeito vacina'
-              color='#7F8084'
-              side='center'
-              bold={600}
-            />
+              $color='#7F8084'
+              $align='center'
+              $bold={600}
+            >
+              Sem risco de efeito vacina
+            </H3>
 
             <P 
-              text='Por não entrar na corrente sanguínea você também não corre o risco de sofrer com o efeito vacina e fazer dezenas de rotoques e injetando cada vez mais toxina para se alcançar o resultado desejado.'
-              color='#7F8084'
-              side='center'
-            />
+              $color='#7F8084'
+              $align='center'
+            >
+              Por não entrar na corrente sanguínea você também não corre o risco de sofrer com o efeito vacina e fazer dezenas de rotoques e injetando cada vez mais toxina para se alcançar o resultado desejado.
+            </P>
 
             <P 
-              text='O corpo humano é uma máquina inteligente que vem sendo melhorada ao longo de 4 bilhões de anos, e se tem uma coisa que o corpo humano sabe fazer é criar sistemas de defesa contra corpos estranhos.'
-              color='#7F8084'
-              side='center'
-            />
+              $color='#7F8084'
+              $align='center'
+            >
+              O corpo humano é uma máquina inteligente que vem sendo melhorada ao longo de 4 bilhões de anos, e se tem uma coisa que o corpo humano sabe fazer é criar sistemas de defesa contra corpos estranhos.
+            </P>
 
             <P 
-              text='Isso acontece com todos os tipos de vírus, bactérias, principalmente, com as toxinas, afinal, é isso que nós injetamos no rosto para congelar o envelhecimento.'
-              color='#7F8084'
-              side='center'
-            />
+              $color='#7F8084'
+              $align='center'
+            >
+              Isso acontece com todos os tipos de vírus, bactérias, principalmente, com as toxinas, afinal, é isso que nós injetamos no rosto para congelar o envelhecimento.
+            </P>
 
             <P 
-              text='Na Técnica do Ponto Motor você não corre o risco de criar resistência a substância porque a toxina nem chega a ter contato com o seu sangue, portanto o seu organismo nem irá perceber a presença da toxina porque ela está agindo diretamente no nervo, mais especificamente, no neurotransmissor, ou seja, no único local onde a neurotoxina realmente tem ação.'
-              color='#7F8084'
-              side='center'
-            />
+              $color='#7F8084'
+              $align='center'
+            >
+              Na Técnica do Ponto Motor você não corre o risco de criar resistência a substância porque a toxina nem chega a ter contato com o seu sangue, portanto o seu organismo nem irá perceber a presença da toxina porque ela está agindo diretamente no nervo, mais especificamente, no neurotransmissor, ou seja, no único local onde a neurotoxina realmente tem ação.
+            </P>
 
           </div>
 
@@ -319,23 +344,26 @@ export default function Home() {
           '>
 
             <H3 
-              text='BOTOX Sniper'
-              color='#7F8084'
-              side='center'
-              bold={600}
-            />
+              $color='#7F8084'
+              $align='center'
+              $bold={600}
+            >
+              BOTOX Sniper
+            </H3>
 
             <P 
-              text='A maioria dos profissionais injetores que seguem sem questionar o protocolo padrão, acabam por administrarem a neurotoxina no músculo, simplesmente, porque não podem encontrar com máxima precisão o local exato para aplicação da substância.'
-              color='#7F8084'
-              side='center'
-            />
+              $color='#7F8084'
+              $align='center'
+            >
+              A maioria dos profissionais injetores que seguem sem questionar o protocolo padrão, acabam por administrarem a neurotoxina no músculo, simplesmente, porque não podem encontrar com máxima precisão o local exato para aplicação da substância.
+            </P>
 
             <P 
-              text='Elas ficam jogando uma batalha naval tentando acertar as terminações nervosas, enquanto nós, acertamos em cheio como snipers, usando apenas UM PONTO por região!'
-              color='#7F8084'
-              side='center'
-            />
+              $color='#7F8084'
+              $align='center'
+            >
+              Elas ficam jogando uma batalha naval tentando acertar as terminações nervosas, enquanto nós, acertamos em cheio como snipers, usando apenas UM PONTO por região!
+            </P>
 
           </div>
 
@@ -362,17 +390,19 @@ export default function Home() {
             gap-5
           '>
 
-            <H2 
-              text='Essa é a tecnologia que usamos para detectar o ponto motor'
-              color='white'
-              side='center'
-            />
+            <H2
+              $color='white'
+              $align='center'
+            >
+              Essa é a tecnologia que usamos para detectar o ponto motor
+            </H2>
 
             <H5 
-              text='A NEUROPEN é a única tecnologia capaz de detectar com máxima precisão o ponto certo para aplicação da neurotoxina botulínica tipo A”'
-              color='#7F8084'
-              side='center'
-            />
+              $color='#7F8084'
+              $align='center'
+            >
+              A NEUROPEN é a única tecnologia capaz de detectar com máxima precisão o ponto certo para aplicação da neurotoxina botulínica tipo A”
+            </H5>
 
           </div>
 
@@ -406,47 +436,25 @@ export default function Home() {
 
       </Container>
 
-      <Container className='relative'>
+      <Container>
 
-        <div className='
-          absolute
-          top-0
-          w-full
-          h-full
-          grid
-          grid-rows-[8]
-        '>
-
-          <div className='bg-[#FFF5F5]' />
-
-          <div className='bg-[#FFEDED]' />
-
-          <div className='bg-[#FFE5E5]' />
-
-          <div className='bg-[#FFDDDD]' />
-
-          <div className='bg-[#FFD5D5]' />
-
-          <div className='bg-[#FFCECE]' />
-
-          <div className='bg-[#FFC6C6]' />
-
-          <div className='bg-[#FFBCBC]' />
-
-        </div>
+        <ContainerGradient />
 
         <MContainer className='
+          relative
+          z-10
           flex
           flex-col
           gap-20
         '>
 
-          <H2 
-            text='Protocolo Padrão <br /> Vs. <br /> A Técnica do Ponto Motor'
-            color='#7F8084'
-            bold={700}
-            side='center'
-          />
+          <H2
+            $color='#7F8084'
+            $bold={700}
+            $align='center'
+          >
+            Protocolo Padrão <br /> Vs. <br /> A Técnica do Ponto Motor
+          </H2>
 
           <div className='
             flex
@@ -559,23 +567,24 @@ export default function Home() {
           '>
 
             <H2 
-              text='Protocolos'
-              color='#7F8084'
-              side='center'
-              bold={600}
-            />
+              $color='#7F8084'
+              $align='center'
+              $bold={600}
+            >
+              Protocolos
+            </H2>
 
             <H5 
-              text='Conheça os protocolos que podem ser realizados pela <br /> Técnica do Ponto Motor'
-              color='#7F8084'
-              side='center'
-              bold={600}
-            />
+              $color='#7F8084'
+              $align='center'
+              $bold={600}
+            >
+              Conheça os protocolos que podem ser realizados pela <br /> Técnica do Ponto Motor
+            </H5>
             
           </div>
 
           <Square 
-            columns={4}
             type='SquareWithoutImage'
             content={[
               {
@@ -622,19 +631,19 @@ export default function Home() {
           '>
 
             <H2 
-              text='Faq'
-              color='#7F8084'
-              uppercase
-              side='center'
-              bold={700}
-            />
+              $color='#7F8084'
+              $uppercase
+              $align='center'
+              $bold={700}
+            >Faq</H2>
 
             <H5 
-              text='Veja abaixo, talvez uma dessas dúvidas também seja a sua!'
-              color='#7F8084'
-              side='center'
-              bold={600}
-            />
+              $color='#7F8084'
+              $align='center'
+              $bold={600}
+            >
+              Veja abaixo, talvez uma dessas dúvidas também seja a sua!
+            </H5>
 
           </div>
 

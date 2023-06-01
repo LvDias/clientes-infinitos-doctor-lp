@@ -16,12 +16,13 @@ export default function TextSecutiry(){
       <Image src='/assets/icons/shield.png' width={28} height={34} alt='Security' />
 
       <H6 
-        text='Segurança e conforto <br /> com menos pontos de aplicação e menos toxina'
-        color='#7F8084'
-        side='center'
-        uppercase
-        bold={500}
-      />
+        $color='#7F8084'
+        $align='center'
+        $uppercase
+        $bold={500}
+      >
+        Segurança e conforto <br /> com menos pontos de aplicação e menos toxina
+      </H6>
 
     </div>
 

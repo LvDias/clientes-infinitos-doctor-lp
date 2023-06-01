@@ -2,12 +2,16 @@ import { v4 as uuidv4 } from 'uuid'
 import ISquare, { ISquareComponent } from './@types/square'
 import { H4, H6, P } from './typography'
 
-export default function Square({ columns, type, content } : ISquare){
+export default function Square({ type, content } : ISquare){
 
   return(
 
-    <div style={{ gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` }} className='
+    <div className='
       grid
+      grid-flow-col
+      auto-cols-fr
+      md:grid-flow-row
+      md:auto-rows-fr
       gap-5
       justify-center
     '>
@@ -89,17 +93,15 @@ export function SquareWithImage({ image, title, desc } : ISquareComponent){
         ' style={{ backgroundImage: `url(${image})` }} />
 
         <H4 
-          text={title}
-          color='#7F8084'
-          side='center'
-          bold={600}
-        />
+          $color='#7F8084'
+          $align='center'
+          $bold={600}
+        >{title}</H4>
       
         <P 
-          text={desc}
-          color='#7F8084'
-          side='center'
-        />
+          $color='#7F8084'
+          $align='center'
+        >{desc}</P>
 
       </div>
 
@@ -125,25 +127,22 @@ export function SquareWithoutImage({ hashtag, title, desc } : ISquareComponent){
     '>
 
       <H6 
-        text={`#${hashtag}`}
-        color='#7F8084'
-        uppercase
-        side='left'
-      />
+        $color='#7F8084'
+        $uppercase
+        $align='left'
+      >{`#${hashtag}`}</H6>
 
       <P 
-        text={title}
-        color='#262625'
-        bold={700}
-        uppercase
-        side='left'
-      />
+        $color='#262625'
+        $bold={700}
+        $uppercase
+        $align='left'
+      >{title}</P>
 
       <P 
-        text={desc}
-        color='#7F8084'
-        side='left'
-      />
+        $color='#7F8084'
+        $align='left'
+      >{desc}</P>
 
     </div>
 
