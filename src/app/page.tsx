@@ -373,7 +373,6 @@ export default function Home() {
 
       <Container className='
         bg-[#262625]
-        relative
         overflow-hidden
         min-h-[722px]
       '>
@@ -388,6 +387,7 @@ export default function Home() {
             flex
             flex-col
             gap-5
+            z-10
           '>
 
             <H2
@@ -422,7 +422,7 @@ export default function Home() {
           <Image 
             className='
               absolute
-              -bottom-[410px]
+              top-[240px]
               left-1/2
               -translate-x-1/2
             '
