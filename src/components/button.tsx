@@ -3,16 +3,15 @@ import Link from 'next/link'
 import IButton from './@types/button'
 import { P } from './typography'
 
-export function ButtonLink({ text, href, shadow } : IButton){
+export function ButtonLink({ text, href, shadow, color, border } : IButton){
 
   return(
 
-    <Link className={`
-      bg-[#0093FF]
+    <Link style={{ background: color, border: '0px', borderBottom: `1px 1px 0px solid ${border}` }} className={`
       text-white
       border
       border-solid
-      border-[#1DA1FF]
+      border-[]
       py-6
       px-12
       min-w-[400px]

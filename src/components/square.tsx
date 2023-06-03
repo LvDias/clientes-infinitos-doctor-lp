@@ -1,20 +1,19 @@
 import { v4 as uuidv4 } from 'uuid'
 import ISquare, { ISquareComponent } from './@types/square'
-import { H4, H6, P } from './typography'
+import { H3, H4, P } from './typography'
 
 export default function Square({ type, content } : ISquare){
 
   return(
 
-    <div className='
+    <div className={`
       grid
-      grid-flow-col
-      auto-cols-fr
+      ${content.length < 4 ? 'grid-flow-col auto-cols-fr' : 'grid-cols-4'}
       md:grid-flow-row
       md:auto-rows-fr
       gap-5
       justify-center
-    '>
+    `}>
 
       {
 
@@ -32,6 +31,12 @@ export default function Square({ type, content } : ISquare){
             return content.map((square) => <SquareWithoutImage 
               key={uuidv4()}
               hashtag={square.hashtag}
+              title={square.title}
+              desc={square.desc}
+            />)
+          case 'SquareText':
+            return content.map((square) => <SquareText 
+              key={uuidv4()}
               title={square.title}
               desc={square.desc}
             />)
@@ -96,12 +101,12 @@ export function SquareWithImage({ image, title, desc } : ISquareComponent){
           $color='#7F8084'
           $align='center'
           $bold={600}
-        >{title}</H4>
+          dangerouslySetInnerHTML={{__html: title}} />
       
         <P 
           $color='#7F8084'
           $align='center'
-        >{desc}</P>
+          dangerouslySetInnerHTML={{__html: desc}} />
 
       </div>
 
@@ -111,7 +116,7 @@ export function SquareWithImage({ image, title, desc } : ISquareComponent){
 
 }
 
-export function SquareWithoutImage({ hashtag, title, desc } : ISquareComponent){
+export function SquareWithoutImage({ title, desc } : ISquareComponent){
 
   return(
 
@@ -126,23 +131,46 @@ export function SquareWithoutImage({ hashtag, title, desc } : ISquareComponent){
       border-[#00000033]
     '>
 
-      <H6 
-        $color='#7F8084'
-        $uppercase
-        $align='left'
-      >{`#${hashtag}`}</H6>
+      <div className='
+        aspect-video
+        bg-[#CBCBCB]
+      ' />
 
       <P 
         $color='#262625'
         $bold={700}
         $uppercase
         $align='left'
-      >{title}</P>
+        dangerouslySetInnerHTML={{__html: title}} />
 
       <P 
         $color='#7F8084'
         $align='left'
-      >{desc}</P>
+        dangerouslySetInnerHTML={{__html: desc}} />
+
+    </div>
+
+  )
+
+}
+
+export function SquareText({ title, desc } : ISquareComponent){
+
+  return(
+
+    <div className='
+      flex
+      flex-col
+      gap-5
+    '>
+
+      <H3 
+        $color='white'
+        dangerouslySetInnerHTML={{__html: title}} />
+
+      <P
+        $color='#7F8084'
+        dangerouslySetInnerHTML={{__html: desc}} />
 
     </div>
 

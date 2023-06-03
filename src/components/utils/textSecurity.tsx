@@ -2,7 +2,12 @@ import Image from 'next/image'
 
 import { H6 } from '../typography'
 
-export default function TextSecutiry(){
+interface ITextSecurity {
+  color : string
+  shield ?: boolean
+}
+
+export default function TextSecutiry({ color, shield } : ITextSecurity){
   
   return(
 
@@ -13,10 +18,14 @@ export default function TextSecutiry(){
       gap-5
     '>
 
-      <Image src='/assets/icons/shield.png' width={28} height={34} alt='Security' />
+      {
+
+        shield ? <Image src='/assets/icons/shield.png' width={28} height={34} alt='Security' /> : <Image className='hidden' src='/assets/icons/shield.png' width={28} height={34} alt='Security' />
+
+      }
 
       <H6 
-        $color='#7F8084'
+        $color={color}
         $align='center'
         $uppercase
         $bold={500}

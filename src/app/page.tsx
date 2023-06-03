@@ -69,9 +69,14 @@ export default function Home() {
               <ButtonLink 
                 text='Xô rugas. Quero ficar mais jovem!'
                 href='/'
+                color='#0093FF'
+                border='#1DA1FF'
               />
 
-              <TextSecutiry />
+              <TextSecutiry 
+                color='#7F8084'
+                shield
+              />
 
             </div>
 
@@ -170,10 +175,15 @@ export default function Home() {
           <ButtonLink 
             text='Quero agendar um horário'
             href='/'
+            color='#008AFF'
+            border='#0089FF'
             shadow
           />
 
-          <TextSecutiry />
+          <TextSecutiry 
+            color='#7F8084'
+            shield
+          />
 
         </SContainer>
 
@@ -371,70 +381,140 @@ export default function Home() {
 
       </Container>
 
-      <Container className='
-        bg-[#262625]
-        overflow-hidden
-        min-h-[722px]
+      <div className='
+        grid
+        gap-20
+        bg-[#000000]
       '>
 
-        <SContainer className='
+        <div className='
           flex
           flex-col
-          gap-12
+          gap-5
+          place-self-center
+          mt-20
+          md:mt-10
         '>
+
+          <H2
+            $color='white'
+            $align='center'
+            $bold={600}
+          >
+            Essa é a tecnologia que usamos <br /> para detectar o ponto motor
+          </H2>
+          
+          <H5
+            $color='#7F8084'
+            $align='center'
+          >
+            A NEUROPEN é a única tecnologia capaz de detectar com máxima precisão <br /> o ponto certo para aplicação da neurotoxina botulínica tipo A”
+          </H5>
+
+        </div>
+
+        <div className='
+          flex
+          flex-col
+        '>
+
+          <div className='
+            relative
+          '>
+
+            <div className='
+              absolute
+              -top-[224px]
+              left-1/2
+              -translate-x-1/2
+              w-full
+              h-[672px]
+              max-w-4xl
+              bg-gradient-radial
+              from-[rgba(105,252,44,0.2)] from-5%
+              via-[rgba(105,252,44,0.05)] via-40%
+              to-[rgba(105,252,44,0)] to-55%
+            ' />
+
+            <Image 
+              className='
+                relative
+                left-1/2
+                -translate-x-1/2
+              '
+              src='/assets/neuropen-slice.png'
+              width={80}
+              height={820}
+              alt='Neuropen'
+            />
+
+          </div>
 
           <div className='
             flex
             flex-col
+            bg-[#262625]
+            p-20
             gap-5
-            z-10
           '>
 
             <H2
               $color='white'
               $align='center'
+              $bold={600}
             >
-              Essa é a tecnologia que usamos para detectar o ponto motor
+              Sobre o tratamento
             </H2>
 
-            <H5 
+            <H5
               $color='#7F8084'
               $align='center'
+              $bold={600}
             >
-              A NEUROPEN é a única tecnologia capaz de detectar com máxima precisão o ponto certo para aplicação da neurotoxina botulínica tipo A”
+              Nós atualizamos os tratamentos com a toxina botulínica para oferecer mais <br /> segurança e conforto aos nossos pacientes, e o motivo é simples: porque <br /> nós entendemos que lugar de neurotoxina é no nervo, e não no músculo!
             </H5>
 
           </div>
 
-          <div className='
-            absolute
-            left-1/2
-            -translate-x-1/2
-            w-full
-            h-[672px]
-            max-w-4xl
-            bg-gradient-radial
-            from-[rgba(105,252,44,0.2)] from-5%
-            via-[rgba(105,252,44,0.05)] via-40%
-            to-[rgba(105,252,44,0)] to-55%
-          ' />
+        </div>
 
-          <Image 
-            className='
-              absolute
-              top-[240px]
-              left-1/2
-              -translate-x-1/2
-            '
-            src='/assets/neuropen.png'
-            width={80}
-            height={820}
-            alt='Neuropen'
+        <div className='
+          flex
+          flex-col
+          gap-10
+          mx-20
+          mb-20
+          md:mx-10
+          md:mb-10
+        '>
+
+          <H2
+            $color='#7F8084'
+            $align='center'
+            $bold={600}
+          >Atualizações</H2>
+
+          <Square 
+            type='SquareText'
+            content={[
+              {
+                title: 'Atualização do tratamento:',
+                desc: 'O protocolo padrão existe desde 2016 e foi criado por consenso (sem comprovação cientifica) com o objetivo de fornecer uma estimativa de dosagem e pontuações para administração por via intramuscular.'
+              },
+              {
+                title: 'Validação do método:',
+                desc: 'A Técnica do Ponto Motor levou sete anos de pesquisa cientifica e milhares de testes para validar a eficácia do tratamento. <br /> <br /> Mais de mil pacientes receberam a toxina sobre o nervo e tiveram resultados melhores, recebendo uma dosagem mínima de toxina.'
+              },
+              {
+                title: 'Comprovação cientifica:',
+                desc: 'A técnica do ponto motor não foi criada por consenso, ela foi testada e validada por centenas de profissionais injetores nos milhares de tratamentos realizados em pacientes mulheres e homens de várias idades e biotipos diferentes. <br /> <br /> A Técnica do Ponto Motor é a literatura mais lida no mundo e tem sua eficácia comprovada por cientistas.'
+              }
+            ]}
           />
 
-        </SContainer>
+        </div>
 
-      </Container>
+      </div>
 
       <Container>
 
@@ -588,23 +668,51 @@ export default function Home() {
             type='SquareWithoutImage'
             content={[
               {
-                hashtag: 'Benefício',
-                title: 'Título do benefício',
+                title: 'Rugas periorbiculares',
+                desc: 'Pé de galinha - lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+              },
+              {
+                title: 'Rugas frontais',
+                desc: 'Rugas da testa - lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+              },
+              {
+                title: 'Sorriso gengival',
                 desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
               },
               {
-                hashtag: 'Benefício',
-                title: 'Título do benefício',
+                title: 'Sinal de marionete',
                 desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
               },
               {
-                hashtag: 'Benefício',
-                title: 'Título do benefício',
+                title: 'Elevação da ponta do nariz',
                 desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
               },
               {
-                hashtag: 'Benefício',
-                title: 'Título do benefício',
+                title: 'Apertamento dental',
+                desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+              },
+              {
+                title: 'Bruxismo',
+                desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+              },
+              {
+                title: 'Hipertrofia de masseter',
+                desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+              },
+              {
+                title: 'Cefaleia tensional',
+                desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+              },
+              {
+                title: 'Distúrbios temporomandibulares',
+                desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+              },
+              {
+                title: 'Bruxismo',
+                desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+              },
+              {
+                title: 'Hipertrofia de masseter',
                 desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
               }
             ]}
@@ -666,6 +774,43 @@ export default function Home() {
             ]}
           />
 
+        </MContainer>
+
+      </Container>
+
+      <Container className='
+        bg-[#0196FC]
+      '>
+
+        <MContainer className='
+          flex
+          flex-col
+          gap-5
+          items-center
+        '>
+
+          <H2
+            $align='center'
+            $color='white'
+            $bold={600}
+          >Agende agora uma avaliação!</H2>
+          
+          <P 
+            $align='center'
+            $color='white'
+            $bold={600}
+          >Vá em frente, toque no botão abaixo e pareça ainda mais <br /> jovem com a Técnica do Ponto Motor!</P>
+
+          <ButtonLink
+            text='Xô rugas. Quero ficar mais jovem!'
+            href='/'
+            color='#25D366'
+            border='#00FF5F'
+          />
+
+          <TextSecutiry 
+            color='white'
+          />
         </MContainer>
 
       </Container>
